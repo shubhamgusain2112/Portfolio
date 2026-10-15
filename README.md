@@ -1,3 +1,3 @@
 # Shubham Gusain's Portfolio
 
-[Link to Portfolio](https://shubhamgusain2112.github.io/Portfolio/){:target="_blank"}
+<a href="https://shubhamgusain2112.github.io/Portfolio/" target="_blank">Link to Portfolio</a>
