@@ -1,89 +1,221 @@
 <!DOCTYPE html>
-<html>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<html lang="en">
 
-<body>
-    <div id="nav-placeholder">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | Shubham Gusain</title>
+    <meta name="description" content="Shubham Gusain's education, experience, projects and certifications.">
+    <link rel="icon" href="img/ShubhLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
+</head>
 
-    </div>
+<body data-page="portfolio">
+    <main id="content">
 
-    <script>
-        $(function() {
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
-    <section class="Content">
-        <h class="Header">Computer Languages:</h>
-    </section>
+        <header>
+            <h1 class="page-title">Portfolio</h1>
+            <p class="page-sub">Currently pursuing MSc Computer Science: Data Science at Leiden University.</p>
+        </header>
 
-    <section class="Portfolio_Section">
-        <img src="img/C_Logo.png" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">C</h>
-            <p>Project: Calculator App </p>
-        </div>
-    </section>
-    <section class="Portfolio_Section">
-        <img src="img/C++_Logo.png" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">C++</h>
-            <p>Project: Bank Management System</p>
-        </div>
-    </section>
-    <section class="Portfolio_Section">
-        <img src="img/Python_Logo.png" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">Python</h>
-            <p>Project: Face detection</p>
-        </div>
-    </section>
-    <section class="Portfolio_Section">
-        <img src="img/WebDev_Logo.png" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">Web Dev</h>
-            <p>Project: Multiple websites</p>
-        </div>
-    </section>
-    </section>
-    <section class="Content">
-        <h class="Header">Certifications:</h>
-    </section>
-    <section class="Portfolio_Section">
-        <img src="img/AWS_Cert.jpg" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">Data Center Tech</h>
-            <p>Certification through: AWS</p>
-        </div>
-    </section>
-    <section class="Portfolio_Section">
-        <img src="img/DS_Cert.jpg" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">Data Structures</h>
-            <p>Certification through: Coursera</p>
-        </div>
-    </section>
-        <section class="Portfolio_Section">
-        <img src="img/Python_Cert.jpg" class="right_img">
-        <div class="left_text">
-            <h class="left_text_header">Python</h>
-            <p>Certification through: Fessorpro</p>
-        </div>
-    </section>
-    <section class="Content">
-        <h class="Header">Languages Spoken:</h>
-    </section>
-    <section>
-        <div class="Main">
-            <h class="center_text">English</h>
-            <h class="center_text">हिन्दी</h>
-            <h class="center_text">Nederlands</h>
-        </div>
-    </section>
-    <section>
-        <h class="Footer"></h>
-    </section>
+        <!-- EDUCATION -->
+        <section class="section" aria-labelledby="education">
+            <h2 class="section-title" id="education">Education</h2>
 
+            <article class="entry">
+                <h3 class="entry-title">MSc Computer Science: Data Science</h3>
+                <p class="entry-org">Universiteit Leiden</p>
+                <p class="entry-date">[Sept. 2025] &ndash; [Aug. 2027]</p>
+                <!-- 
+                <div class="entry-body">
+                    <ul class="entry-list">
+                        <li>Relevant courses: ...</li>
+                    </ul>
+                </div>
+                -->
+            </article>
 
+            <article class="entry">
+                <h3 class="entry-title">BTech CSE, specializing in Big Data Analytics</h3>
+                <p class="entry-org">SRM Institute of Science and Technology</p>
+                <p class="entry-date">[Sept. 2020] &ndash; [Jun. 2024]</p>
+            </article>
+        </section>
+
+        <!-- INTERNSHIPS -->
+        <section class="section" aria-labelledby="experience">
+            <h2 class="section-title" id="experience">Experience</h2>
+
+            <article class="entry">
+                <h3 class="entry-title">Databricks Engineer Intern</h3>
+                <p class="entry-org">Bridgestone</p>
+                <p class="entry-date">[Dec. 2024] &ndash; [Apr. 2025]</p>
+                <div class="entry-body">
+                    <ul class="entry-list">
+                        <li>Migrated several crucial SQL databases to Databricks SQL.</li>
+                        <li>Optimized existing SQL databases resulting in 500% - 700% decrease in runtime.</li>
+                        <li>Contributed to analytical tools for data visualization.</li>
+                        <li>Collaborated with large international teams on projects vital for multiple departments.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="entry">
+                <h3 class="entry-title">Data Science Intern</h3>
+                <p class="entry-org">PwC</p>
+                <p class="entry-date">[Jan. 2024] &ndash; [Mar. 2024]</p>
+                <div class="entry-body">
+                    <ul class="entry-list">
+                        <li>Performed data analysis on client-provided data.</li>
+                        <li>Created data visualizations and shared insights with cross-functional teams.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" aria-labelledby="projects">
+            <h2 class="section-title" id="projects">Projects</h2>
+
+            <ul class="cards">
+                <li>
+                    <a class="card" href="#">
+                        <img class="card-logo" src="img/C_Logo.png" alt="" width="48" height="48" loading="lazy">
+                        <div>
+                            <h3 class="card-title">RoboCat</h3>
+                            <p class="card-tag">ROS2, Python, Audio Processing, Hardware</p>
+                            <span class="card-go">View project &rarr;</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="card" href="#">
+                        <img class="card-logo" src="img/Python_Logo.png" alt="" width="48" height="48" loading="lazy">
+                        <div>
+                            <h3 class="card-title">Natural Mapping and Adaptation</h3>
+                            <p class="card-tag">Python</p>
+                            <span class="card-go">View project &rarr;</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="card" href="#">
+                        <img class="card-logo" src="img/Python_Logo.png" alt="" width="48" height="48" loading="lazy">
+                        <div>
+                            <h3 class="card-title">Metformin and Gluconeogenesis Simulations</h3>
+                            <p class="card-tag">Snoopy, Python</p>
+                            <span class="card-go">View project &rarr;</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="card" href="#">
+                        <img class="card-logo" src="img/WebDev_Logo.png" alt="" width="48" height="48" loading="lazy">
+                        <div>
+                            <h3 class="card-title">Multiple websites</h3>
+                            <p class="card-tag">Web development</p>
+                            <span class="card-go">View project &rarr;</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" aria-labelledby="skills">
+            <h2 class="section-title" id="skills">Skills</h2>
+
+            <div class="skill-row">
+                <p class="skill-label">Programming</p>
+                <ul class="pills pills-outline">
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>ROS2</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <div class="skill-row">
+                <p class="skill-label">Data Analysis</p>
+                <ul class="pills pills-outline">
+                    <li>Apache DataBricks</li>
+                    <li>Tableau</li>
+                    <li>PowerBI</li>
+                </ul>
+            </div>
+            <div class="skill-row">
+                <p class="skill-label">Other Software</p>
+                <ul class="pills pills-outline">
+                    <li>Snoopy</li>
+                    <li>Git</li>
+                    <li>HTML/CSS</li>
+                    <li>GDPC</li>
+                </ul>
+            </div>
+            <div class="skill-row">
+                <p class="skill-label">Strengths</p>
+                <ul class="pills pills-outline">
+                    <li>Data Analysis</li>
+                    <li>Machine Learning</li>
+                    <li>Text Mining</li>
+                    <li>Deep Learning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="experience">
+            <h2 class="section-title" id="experience">Extra Curricular</h2>
+
+            <article class="entry">
+                <h3 class="entry-title">Convener, SRM Cube Club</h3>
+                <p class="entry-org">SRM Institute of Science and Technology</p>
+                <p class="entry-date">[Jul. 2023] &ndash; [Aug. 2024]</p>
+                <div class="entry-body">
+                    <ul class="entry-list">
+                        <li>Headed the club, managed recruitment drive, and other promotional activities.</li>
+                        <li>Responsible for organizing multiple events, competitions, builds and coordinating with other club conveners.</li>
+                        <li>Oversaw budgeting and presented ideas to the university along with showcasing to the NAAC committee, receiving praise from the officials and Dean.</li>
+                        <li>Recognized for my efforts and received accolades from the university.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="section" aria-labelledby="certifications">
+            <h2 class="section-title" id="certifications">Certifications</h2>
+
+            <article class="entry">
+                <h3 class="entry-title">Data Center Tech</h3>
+                <p class="entry-org">AWS</p>
+                <p class="entry-date"><a class="list1" href="img/AWS_Cert.jpg" target="_blank" rel="noopener">View certificate</a></p>
+            </article>
+
+            <article class="entry">
+                <h3 class="entry-title">Data Structures</h3>
+                <p class="entry-org">Coursera</p>
+                <p class="entry-date"><a class="list1" href="img/DS_Cert.jpg" target="_blank" rel="noopener">View certificate</a></p>
+            </article>
+
+            <article class="entry">
+                <h3 class="entry-title">Python</h3>
+                <p class="entry-org">Fessorpro</p>
+                <p class="entry-date"><a class="list1" href="img/Python_Cert.jpg" target="_blank" rel="noopener">View certificate</a></p>
+            </article>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section class="section" aria-labelledby="languages">
+            <h2 class="section-title" id="languages">Languages spoken</h2>
+
+            <ul class="pills pills-lg">
+                <li lang="en">English</li>
+                <li lang="hi">हिन्दी</li>
+                <li lang="nl">Nederlands</li>
+            </ul>
+        </section>
+
+    </main>
 </body>
 
 </html>

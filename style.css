@@ -1,105 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
-.body {
-    font-family: 'Ubuntu Mono';
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --green: rgb(108, 190, 0);
+    --grey-dark: rgb(120, 120, 120);
+    --grey: rgb(145, 145, 145);
+    --grey-light: rgb(160, 160, 160);
+    --white: rgb(255, 255, 255);
+    --radius: 0.25em;
+    --mono: 'Ubuntu Mono', ui-monospace, Menlo, Consolas, monospace;
+    --serif: 'Fraunces', Georgia, serif;
 }
 
-.nav {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255);
-    box-shadow: 0.1em 0.5em 0.8em rgba(0, 0, 0, 0.03);
-    z-index: 100;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-}
-
-.menu li a {
-    display: grid;
-    line-height: 1.5rem;
-    margin: 0.2em;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    flex-direction: column;
+    font-family: var(--mono);
     font-weight: 700;
-    text-transform: uppercase;
-    color: rgb(108, 190, 0);
-    font-family: 'Ubuntu Mono';
+    line-height: 1.5;
+    color: var(--grey);
+    background: var(--white);
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--green);
     text-decoration: none;
 }
 
-.menu li a:hover {
-    text-transform: lowercase;
-    font-style: italic;
+a:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
 }
 
-.Contact-Me {
-    font-family: 'Ubuntu Mono';
-    font-weight: 700;
-    text-decoration: none;
-    position: absolute;
-    right: 2em;
-    color: rgb(160, 160, 160);
-}
-
-.Contact-Me:hover {
-    text-transform: lowercase;
-    font-style: italic;
-}
-
-.Main {
-    font-family: 'Ubuntu Mono';
-    font-weight: 700;
-    text-align: center;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    margin-top: 7%;
-}
-
-.Content {
-    text-align: center;
-    padding-top: 8em;
-    font-family: 'Ubuntu Mono';
-    font-weight: 600;
-}
-
-.Content p {
-    color: rgb(145, 145, 145);
-}
-
-.Header {
-    color: rgb(145, 145, 145);
-    font-size: 2em;
-}
-
-.Header_ShubhamGusain {
-    color: rgba(108, 190, 0);
-    font-size: 2em;
-    font-family: 'Fraunces';
-    font-weight: 900;
-}
-
-.img1 {
-    border-top: 0.2rem;
-    border-bottom: 0.2rem;
-    padding: 0.25rem;
-    width: 3rem;
-    border-radius: 1.75rem;
-}
-
-h1 {
-    text-align: center;
-}
-
+/* Signature hover: text goes lowercase (and italic in the nav) */
 .list1 {
-    color: rgba(108, 190, 0);
+    color: var(--green);
     text-decoration: none;
 }
 
@@ -107,71 +61,485 @@ h1 {
     text-transform: lowercase;
 }
 
-.Divider {
-    height: 3%;
+.skip {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    background: var(--green);
+    color: var(--white);
 }
 
-.Portfolio_Section {
-    padding-top: 5%;
+.skip:focus {
+    left: 0;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
-    width: 40%;
-    margin: auto;
-    text-align: center;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 0 0.5rem;
+    padding: 0.25rem 1rem;
+    background: var(--white);
+    box-shadow: 0.1em 0.5em 0.8em rgba(0, 0, 0, 0.03);
 }
 
-.right_img {
-    max-height: 30%;
-    width: 50%;
-    margin-left: 7%;
+.logo {
+    display: block;
+    line-height: 0;
 }
 
-.left_text {
-    font-family: 'Ubuntu Mono';
-    font-weight: 700;
-    background-color: rgba(108, 190, 0);
-    color: white;
-    margin-left: 10%;
-    width: 50%;
-    padding: 5%;
-    border-radius: 0.25em;
+.img1 {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.25rem;
+    object-fit: cover;
+    border-radius: 1.75rem;
 }
 
-.left_text_header {
-    font-family: 'Fraunces';
-    color: white;
-    font-size: 2em;
-    font-weight: 700;
-}
-
-.list2 {
-    color: rgba(108, 190, 0);
-    text-decoration: none;
-}
-
-.center_text {
-    font-family: 'Fraunces';
-    background-color: rgba(108, 190, 0);
-    color: white;
-    font-size: 1.5em;
+.menu {
+    display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a,
+.contact-link {
+    display: block;
+    padding: 0.6rem 0.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+
+.menu a {
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.contact-link {
+    margin-left: auto;
+    color: var(--grey-light);
+}
+
+.menu a:hover,
+.contact-link:hover {
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+.nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35em;
+}
+
+/* ---------- Page layout ---------- */
+main {
+    flex: 1 0 auto;
     width: 100%;
-    padding: 5%;
-    margin-top: 10%;
-    border-radius: 0.25em;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+}
+
+.center-page {
+    padding-top: clamp(2rem, 8vh, 5rem);
+    text-align: center;
+}
+
+/* ---------- Home ---------- */
+.hero-wrap {
+    padding-top: clamp(1.5rem, 10vh, 6rem);
+    text-align: center;
+}
+
+.hero {
+    margin: 0;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--grey);
+}
+
+.hero-name {
+    font-family: var(--serif);
+    font-weight: 900;
+    color: var(--green);
 }
 
 .home {
-    margin: 3%;
+    max-width: 50rem;
+    margin: 3rem auto 0;
     padding: 1.5em;
     text-align: center;
-    font-family: "Ubuntu Mono";
-    font-weight: 700;
-    background-color: rgba(108, 190, 0);
-    color: white;
-    border-radius: 0.25em;
+    background: var(--green);
+    color: var(--white);
+    border-radius: var(--radius);
 }
 
-.Footer {
-    padding: 3em;
+/* ---------- Text pages (Contact, Personal, Read) ---------- */
+.lead {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--grey-dark);
+}
+
+.lead + .links,
+.links + .lead {
+    margin-top: 0.25rem;
+}
+
+.links + .lead {
+    margin-top: 2rem;
+}
+
+.links {
+    margin: 0.25rem 0;
+}
+
+.links a {
+    display: inline-block;
+    padding: 0.35rem 0.5rem;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.35rem 0.5rem;
+}
+
+/* ---------- Portfolio ---------- */
+.page-title {
+    margin: 0 0 0.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--grey);
+}
+
+.page-sub {
+    margin: 0;
+    font-weight: 400;
+    color: var(--grey-light);
+}
+
+.section {
+    margin-top: 2.5rem;
+}
+
+.section-title {
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--green);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "title date"
+        "org   org"
+        "body  body";
+    column-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.entry-title {
+    grid-area: title;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--grey);
+}
+
+.entry-org {
+    grid-area: org;
+    margin: 0;
+    color: var(--green);
+}
+
+.entry-date {
+    grid-area: date;
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+    color: var(--grey-light);
+}
+
+.entry-body {
+    grid-area: body;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+.entry-list {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+/* Project cards*/
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cards > li {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--green);
+    color: var(--white);
+    border-radius: var(--radius);
+    transition: transform 0.15s ease;
+}
+
+.card-logo {
+    flex: none;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem;
+    object-fit: contain;
+    background: var(--white);
+    border-radius: var(--radius);
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.card-tag {
+    margin: 0.15rem 0 0;
+    font-weight: 400;
+}
+
+.card-desc {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.card-go {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* No link yet: card is not clickable and shows no "View project" */
+.card[href="#"] {
+    cursor: default;
+}
+
+.card[href="#"] .card-go {
+    display: none;
+}
+
+a.card:not([href="#"]):hover {
+    transform: translateY(-2px);
+}
+
+a.card:not([href="#"]):hover .card-title {
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+/* Skills and languages */
+.skill-row {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 0.5rem 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.skill-label {
+    margin: 0;
+    padding-top: 0.25rem;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pills li {
+    padding: 0.25rem 0.75rem;
+    background: var(--green);
+    color: var(--white);
+    border-radius: var(--radius);
+}
+
+.pills-outline li {
+    background: transparent;
+    color: var(--green);
+    box-shadow: inset 0 0 0 2px var(--green);
+}
+
+.pills-lg li {
+    padding: 0.5rem 1rem;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    flex-shrink: 0;
+    margin-top: 2rem;
+    padding: 2rem 1.25rem 1.5rem;
+    border-top: 2px solid var(--green);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-inner {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 46rem;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0.25rem 0 0;
+    font-weight: 400;
+}
+
+.footer-name {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 900 !important;
+    color: var(--green);
+}
+
+.footer .footer-head {
+    margin: 0 0 0.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--grey);
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer li a {
+    display: inline-block;
+    padding: 0.2rem 0;
+}
+
+.footer .footer-copy {
+    max-width: 46rem;
+    margin: 1.5rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(145, 145, 145, 0.25);
+    text-align: center;
+    color: var(--grey-light);
+}
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 40rem) {
+    .footer-inner {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        text-align: left;
+    }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 36rem) {
+    .hero-name {
+        display: block;
+    }
+
+    .entry {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "org"
+            "date"
+            "body";
+    }
+
+    .entry-date {
+        text-align: left;
+        white-space: normal;
+    }
+
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .skill-label {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 30rem) {
+    .nav {
+        gap: 0 0.25rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .menu a,
+    .contact-link {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+
+    main {
+        padding-top: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .card {
+        transition: none;
+    }
+
+    a.card:not([href="#"]):hover {
+        transform: none;
+    }
 }
