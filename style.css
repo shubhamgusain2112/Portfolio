@@ -500,6 +500,7 @@ a.card:not([href="#"]):hover .card-title {
             "title"
             "org"
             "date"
+            "loc"
             "body";
     }
 
