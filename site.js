@@ -11,15 +11,15 @@
     var nav =
         '<a class="skip" href="#content">Skip to content</a>' +
         '<nav class="nav" aria-label="Main">' +
-            '<a href="/index.html" class="logo">' +
-                '<img src="/img/ShubhLogo.jpg" class="img1" alt="Shubham Gusain, home" width="56" height="56">' +
+            '<a href="index.html" class="logo">' +
+                '<img src="img/ShubhLogo.jpg" class="img1" alt="Shubham Gusain, home" width="56" height="56">' +
             '</a>' +
             '<ul class="menu">' +
-                '<li><a href="../index.html"' + current('home') + '>Home</a></li>' +
-                '<li><a href="../Portfolio.html"' + current('portfolio') + '>Portfolio</a></li>' +
-                '<li><a href="../Personal.html"' + current('personal') + '>Personal</a></li>' +
+                '<li><a href="index.html"' + current('home') + '>Home</a></li>' +
+                '<li><a href="Portfolio.html"' + current('portfolio') + '>Portfolio</a></li>' +
+                '<li><a href="Personal.html"' + current('personal') + '>Personal</a></li>' +
             '</ul>' +
-            '<a href="../Contact.html" class="contact-link"' + current('contact') + '>Contact<span class="hide-sm"> Me</span></a>' +
+            '<a href="Contact.html" class="contact-link"' + current('contact') + '>Contact<span class="hide-sm"> Me</span></a>' +
         '</nav>';
 
     var year = new Date().getFullYear();
@@ -35,10 +35,10 @@
                 '<div>' +
                     '<p class="footer-head">Pages</p>' +
                     '<ul>' +
-                        '<li><a class="list1" href="../index.html">Home</a></li>' +
-                        '<li><a class="list1" href="../Portfolio.html">Portfolio</a></li>' +
-                        '<li><a class="list1" href="../Personal.html">Personal</a></li>' +
-                        '<li><a class="list1" href="../Contact.html">Contact</a></li>' +
+                        '<li><a class="list1" href="index.html">Home</a></li>' +
+                        '<li><a class="list1" href="Portfolio.html">Portfolio</a></li>' +
+                        '<li><a class="list1" href="Personal.html">Personal</a></li>' +
+                        '<li><a class="list1" href="Contact.html">Contact</a></li>' +
                     '</ul>' +
                 '</div>' +
                 '<div>' +
