@@ -5,6 +5,7 @@
     --grey-dark: rgb(100, 100, 100);
     --grey: rgb(145, 145, 145);
     --grey-light: rgb(160, 160, 160);
+    --grey-super-light: rgb(200, 200, 200);
     --white: rgb(255, 255, 255);
     --radius: 0.25em;
     --mono: 'Ubuntu Mono', ui-monospace, Menlo, Consolas, monospace;
@@ -59,6 +60,7 @@ a:focus-visible {
 
 .list1:hover {
     text-transform: lowercase;
+    font-style: italic;
 }
 
 .skip {
@@ -326,16 +328,6 @@ main {
     transition: transform 0.15s ease;
 }
 
-.card-logo {
-    flex: none;
-    width: 3rem;
-    height: 3rem;
-    padding: 0.3rem;
-    object-fit: contain;
-    background: var(--white);
-    border-radius: var(--radius);
-}
-
 .card-title {
     margin: 0;
     font-size: 1.25rem;
@@ -361,6 +353,41 @@ main {
     font-size: 0.9rem;
 }
 
+
+.projects-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    color: var(--grey-light);
+    border-radius: var(--radius);
+    transition: transform 0.15s ease;
+    outline: 2px solid var(--grey-super-light);
+}
+
+.projects-card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--grey-light);
+}
+
+.projects-card:hover{
+    transform:scale(1.02);
+}
+
+a.projects-card:not([href="#"]):hover .projects-card-title {
+    text-transform: lowercase;
+    font-style: italic;
+}
+a.projects-card:not([href="#"]):hover .card-go {
+    text-transform: lowercase;
+    font-style: italic;
+}
+
 /* No link yet: card is not clickable and shows no "View project" */
 .card[href="#"] {
     cursor: default;
@@ -371,10 +398,14 @@ main {
 }
 
 a.card:not([href="#"]):hover {
-    transform: translateY(-2px);
+    transform:scale(1.02);
 }
 
 a.card:not([href="#"]):hover .card-title {
+    text-transform: lowercase;
+    font-style: italic;
+}
+a.card:not([href="#"]):hover .card-go {
     text-transform: lowercase;
     font-style: italic;
 }
@@ -420,6 +451,118 @@ a.card:not([href="#"]):hover .card-title {
     font-family: var(--serif);
     font-size: 1.25rem;
     font-weight: 500;
+}
+
+.btn:hover{
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+/* ---------- Projects page ---------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.search {
+    margin-top: 2rem;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    font: inherit;
+    font-weight: 400;
+    color: var(--grey-dark);
+    background: var(--white);
+    border: 2px solid var(--green);
+    border-radius: var(--radius);
+    text-overflow: ellipsis;
+}
+
+.search-input::placeholder {
+    color: var(--grey-light);
+    opacity: 1;
+}
+
+.search-input:focus-visible {
+    outline: 1px solid var(--green);
+    outline-offset: 0px;
+}
+
+.search-status {
+    min-height: 1.5em;
+    margin: 0.5rem 0 0;
+    font-weight: 400;
+    color: var(--grey-light);
+}
+
+.project-list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* The search hides cards with the [hidden] attribute */
+.project-list > li[hidden] {
+    display: none;
+}
+
+/* Builds on .card: text only, or image + text when an image is included */
+.card.project-card {
+    display: grid;
+    align-items: start;
+}
+
+.project-img {
+    display: block;
+    width: 100%;
+    max-height: 16rem;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.project-caption {
+    margin: 0.15rem 0 0;
+    font-weight: 400;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-tags li {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: var(--radius);
+    box-shadow: inset 0 0 0 2px var(--white);
+}
+
+@media (min-width: 40rem) {
+    .card.project-card:has(.project-img) {
+        grid-template-columns: 11rem 1fr;
+    }
+
+    .project-img {
+        aspect-ratio: 4 / 3;
+    }
 }
 
 /* ---------- Footer ---------- */
@@ -505,6 +648,11 @@ a.card:not([href="#"]):hover .card-title {
     }
 
     .entry-date {
+        text-align: left;
+        white-space: normal;
+    }
+
+    .entry-loc {
         text-align: left;
         white-space: normal;
     }

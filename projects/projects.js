@@ -19,7 +19,7 @@
                 '<li><a href="../Portfolio.html"' + current('portfolio') + '>Portfolio</a></li>' +
                 '<li><a href="../Personal.html"' + current('personal') + '>Personal</a></li>' +
             '</ul>' +
-            '<a href="Contact.html" class="contact-link"' + current('contact') + '>Contact<span class="hide-sm"> Me</span></a>' +
+            '<a href="../Contact.html" class="contact-link"' + current('contact') + '>Contact<span class="hide-sm"> Me</span></a>' +
         '</nav>';
 
     var year = new Date().getFullYear();
