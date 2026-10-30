@@ -354,7 +354,7 @@ main {
 }
 
 
-.projects-card {
+.all-projects-card {
     flex: 1;
     display: flex;
     align-items: center;
@@ -367,7 +367,7 @@ main {
     outline: 2px solid var(--grey-super-light);
 }
 
-.projects-card-title {
+.all-projects-card-title {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
@@ -375,15 +375,15 @@ main {
     color: var(--grey-light);
 }
 
-.projects-card:hover{
+.all-projects-card:hover{
     transform:scale(1.02);
 }
 
-a.projects-card:not([href="#"]):hover .projects-card-title {
+a.all-projects-card:not([href="#"]):hover .all-projects-card-title {
     text-transform: lowercase;
     font-style: italic;
 }
-a.projects-card:not([href="#"]):hover .card-go {
+a.all-projects-card:not([href="#"]):hover .card-go {
     text-transform: lowercase;
     font-style: italic;
 }
@@ -518,10 +518,17 @@ a.card:not([href="#"]):hover .card-go {
     display: none;
 }
 
-/* Builds on .card: text only, or image + text when an image is included */
-.card.project-card {
+.project-card {
+    flex: 1;
+    gap: 1rem;
+    padding: 1rem;
+    transition: transform 0.15s ease;
     display: grid;
     align-items: start;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    outline: 2px solid var(--green);
+
 }
 
 .project-img {
@@ -534,12 +541,22 @@ a.card:not([href="#"]):hover .card-go {
 }
 
 .project-card-title {
-    font-size: 1.25rem;
+    margin: 0.25rem 0 ;
+    font-size: 1.5rem;
+    color: var(--grey-dark);
 }
 
 .project-caption {
-    margin: 0.15rem 0 0;
+    margin: 0.1rem 0 0;
     font-weight: 400;
+    color: var(--grey);
+}
+
+.project-card-desc {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--grey-light)
 }
 
 .project-tags {
@@ -549,14 +566,44 @@ a.card:not([href="#"]):hover .card-go {
     margin: 0.75rem 0 0;
     padding: 0;
     list-style: none;
+    color: var(--grey-light);
 }
 
 .project-tags li {
     padding: 0 0.5rem;
     font-size: 0.9rem;
     font-weight: 400;
+    border: 1px dotted var(--grey-super-light);
     border-radius: var(--radius);
     box-shadow: inset 0 0 0 2px var(--white);
+}
+
+.project-card-go {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--green);
+}
+
+.project-card[href="#"] {
+    cursor: default;
+}
+
+.project-card[href="#"] .project-card-go {
+    display: none;
+}
+
+a.project-card:not([href="#"]):hover {
+    transform:scale(1.02);
+}
+
+a.project-card:not([href="#"]):hover .project-card-title {
+    text-transform: lowercase;
+    font-style: italic;
+}
+a.project-card:not([href="#"]):hover .project-card-go {
+    text-transform: lowercase;
+    font-style: italic;
 }
 
 @media (min-width: 40rem) {
